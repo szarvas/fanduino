@@ -1,0 +1,50 @@
+﻿# This is a YAML file. Make sure you don't use tabs,
+# only spaces here.
+#
+# This is the port's name given to the fan controller.
+# You can find this in Windows' device manager.
+Port: COM3
+StartMinimized: Yes
+
+# This is how you configure three fans in your system
+# At 50°C the first fan will spin at 28%, and at 80°C
+# it will spin at 70%. Between these two it will spin
+# at an appropriate average of the two i.e. using
+# linear interpolation between two given 
+# [temperature, speed] points.
+#
+# For each fan you can specify speeds determined by The
+# CPU and the GPU too. The actual speed will be the
+# the maximum of these two values. So if according to
+# the CPU temperature your fan should spin at 50% and
+# 60% according to the GPU temperature, it will spin at
+# 60%.
+#
+# Right now you can configure at most 4 fans here,
+# because that is how many the Arduino program can
+# handle.
+FanConfig:
+  - cpu:
+    # These are [temperature, duty cycle pairs]
+    - [50,28]
+    - [80,70]
+    gpu:
+    - [50,28]
+    - [60,50]
+    - [70,90]
+
+  - cpu:
+    - [50,28]
+    - [80,70]
+    gpu:
+    - [50,28]
+    - [60,50]
+    - [70,90]
+
+  - cpu:
+    - [50,28]
+    - [80,70]
+    gpu:
+    - [50,28]
+    - [60,50]
+    - [70,90]
