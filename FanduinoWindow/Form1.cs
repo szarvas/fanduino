@@ -33,7 +33,6 @@ namespace FanduinoWindow
         public Form1()
         {
             InitializeComponent();
-            checkboxRunOnStartup.Checked = GetStartup();
             if (Fanduino.Config.startMinimized)
             {
                 WindowState = FormWindowState.Minimized;
@@ -69,51 +68,6 @@ namespace FanduinoWindow
                 notifyIcon1.Visible = true;
                 this.ShowInTaskbar = false;
             }
-        }
-
-        string startupScriptPath = 
-            System.IO.Directory.GetParent(System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData)).FullName
-                + @"\Roaming\Microsoft\Windows\Start Menu\Startup";
-
-        string scriptName = @"\FanduinoStartup.vbs";
-
-        private bool GetStartup()
-        {
-            return System.IO.File.Exists(startupScriptPath + scriptName);
-        }
-
-        private void SetStartup()
-        {
-            string script =
-@"Set WshShell = CreateObject(""WScript.Shell"")
-WshShell.Run chr(34) & ""APPLICATION_PATH"" & Chr(34), 0
-Set WshShell = Nothing"
-    .Replace("APPLICATION_PATH", Application.ExecutablePath.ToString());
-
-            if (checkboxRunOnStartup.Checked)
-            {
-                if (!System.IO.Directory.Exists(startupScriptPath))
-                {
-                    System.IO.Directory.CreateDirectory(startupScriptPath);
-                }
-
-                using (StreamWriter outputFile = new StreamWriter(startupScriptPath + scriptName))
-                {
-                    outputFile.Write(script);
-                }
-            }
-            else
-            {
-                if (GetStartup())
-                {
-                    System.IO.File.Delete(startupScriptPath);
-                }
-            }
-        }
-
-        private void checkboxRunOnStartup_CheckedChanged(object sender, EventArgs e)
-        {
-            SetStartup();
         }
     }
 }

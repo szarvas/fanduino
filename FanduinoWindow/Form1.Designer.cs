@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.checkboxRunOnStartup = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -55,23 +54,11 @@
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
-            // checkboxRunOnStartup
-            // 
-            this.checkboxRunOnStartup.AutoSize = true;
-            this.checkboxRunOnStartup.Location = new System.Drawing.Point(16, 60);
-            this.checkboxRunOnStartup.Name = "checkboxRunOnStartup";
-            this.checkboxRunOnStartup.Size = new System.Drawing.Size(96, 17);
-            this.checkboxRunOnStartup.TabIndex = 1;
-            this.checkboxRunOnStartup.Text = "Run on startup";
-            this.checkboxRunOnStartup.UseVisualStyleBackColor = true;
-            this.checkboxRunOnStartup.CheckedChanged += new System.EventHandler(this.checkboxRunOnStartup_CheckedChanged);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(353, 89);
-            this.Controls.Add(this.checkboxRunOnStartup);
+            this.ClientSize = new System.Drawing.Size(353, 62);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
@@ -86,7 +73,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private System.Windows.Forms.CheckBox checkboxRunOnStartup;
     }
 }
 
