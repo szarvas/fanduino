@@ -20,10 +20,12 @@ limitations under the License.
 const int kFan0PwmPin = 3;
 const int kFan1PwmPin = 9;
 const int kFan2PwmPin = 10;
+const int kFan3PwmPin = 11;
 
 const int kFan0RpmPin = 4;
 const int kFan1RpmPin = 6;
 const int kFan2RpmPin = 7;
+const int kFan3RpmPin = 8;
 
 void setup() {
   Serial.begin(19200);
@@ -95,11 +97,12 @@ void loop() {
   const int kCommandSetDutycycle = 1;
   const int kCommandSetDefaultDutycycle = 2;
   
-  unsigned int rpm0, rpm1, rpm2;
+  unsigned int rpm0, rpm1, rpm2, rpm3;
 
   rpm0 = ReadRpm(kFan0RpmPin);
   rpm1 = ReadRpm(kFan1RpmPin);
   rpm2 = ReadRpm(kFan2RpmPin);
+  rpm3 = ReadRpm(kFan3RpmPin);
       
   Serial.print(rpm0);
   Serial.print(",");
@@ -107,11 +110,15 @@ void loop() {
   Serial.print(",");
   Serial.print(rpm2);
   Serial.print(",");
+  Serial.print(rpm3);
+  Serial.print(",");
   Serial.print(fan_0_dutycycle);
   Serial.print(",");
   Serial.print(fan_1_dutycycle);
   Serial.print(",");
-  Serial.println(fan_2_dutycycle);
+  Serial.print(fan_2_dutycycle);
+  Serial.print(",");
+  Serial.println(fan_3_dutycycle);
 
   if (ReadSerial(command, kCommandLength)) {
     switch (command[0]) {
@@ -142,6 +149,7 @@ void loop() {
   analogWrite(kFan0PwmPin, map(fan_0_dutycycle,0,100,0,255));
   analogWrite(kFan1PwmPin, map(fan_1_dutycycle,0,100,0,255));
   analogWrite(kFan2PwmPin, map(fan_2_dutycycle,0,100,0,255));
+  analogWrite(kFan3PwmPin, map(fan_3_dutycycle,0,100,0,255));
 
   delay(200);
 }
