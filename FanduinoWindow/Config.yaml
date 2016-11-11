@@ -4,7 +4,7 @@
 # This is the port's name given to the fan controller.
 # You can find this in Windows' device manager.
 Port: COM3
-StartMinimized: No
+StartMinimized: Yes
 
 # This is how you configure three fans in your system
 # At 50°C the first fan will spin at 28%, and at 80°C
@@ -19,6 +19,10 @@ StartMinimized: No
 # the CPU temperature your fan should spin at 50% and
 # 60% according to the GPU temperature, it will spin at
 # 60%.
+#
+# Right now you can configure at most 4 fans here,
+# because that is how many the Arduino program can
+# handle.
 FanConfig:
   - cpu:
     # These are [temperature, duty cycle pairs]
@@ -39,7 +43,7 @@ FanConfig:
 
   - cpu:
     - [50,28]
-    - [80,90]
+    - [80,70]
     gpu:
     - [50,28]
     - [60,50]
