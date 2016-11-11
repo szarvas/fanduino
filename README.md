@@ -21,6 +21,6 @@ This is a standalone PC software containing all of the control logic. You can co
 
 ### FanduinoWindow
 
-This is a minimal program with a graphical user interface and is nothing but a thin wrapper around the Fanduino project. It depends on the Fanduino executable, so before building this, you have to build that first. Run the FanduinoWindow.exe to launch it. It requires the same `Config.yaml` file. Unlike the console version it can be conveniently minimized to system tray. You can set up the Window Task Scheduler to launch it at user log on.
+This is a minimal program with a graphical user interface and is nothing but a thin wrapper around the Fanduino project. It depends on the Fanduino executable, so before building this, you have to build that first. Run the FanduinoWindow.exe to launch it. It requires the same `Config.yaml` file. Unlike the console version it can be conveniently minimized to system tray. You can set up the Windows Task Scheduler to launch it at user log on.
 
 ![Fanduino Hardware Schematic](/documentation/gui.png)
