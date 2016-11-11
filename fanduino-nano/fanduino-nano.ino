@@ -33,6 +33,7 @@ void setup() {
   pinMode(kFan0RpmPin, INPUT_PULLUP); 
   pinMode(kFan1RpmPin, INPUT_PULLUP);
   pinMode(kFan2RpmPin, INPUT_PULLUP); 
+  pinMode(kFan3RpmPin, INPUT_PULLUP);
 }
 
 void emptySerialBuffer() {
