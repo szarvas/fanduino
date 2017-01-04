@@ -1,5 +1,5 @@
 # fanduino
-Ardunio Nano based PC fan controller software. Windows only. You can download the prebuilt Windows binaries from the [release](https://github.com/szarvas/fanduino/ releases) menu.
+Ardunio Nano based PC fan controller software. Windows only. You can download the prebuilt Windows binaries from the [release](https://github.com/szarvas/fanduino/releases) menu.
 
 ![Fanduino Hardware Schematic](/documentation/fanduino-hw.png)
 
