@@ -58,7 +58,6 @@ namespace FanduinoWindow
         {
             this.WindowState = FormWindowState.Normal;
             this.ShowInTaskbar = true;
-            Show();
             notifyIcon1.Visible = false;
         }
 
@@ -67,7 +66,6 @@ namespace FanduinoWindow
             if (this.WindowState == FormWindowState.Minimized)
             {
                 notifyIcon1.Visible = true;
-                Hide();
                 this.ShowInTaskbar = false;
             }
         }
